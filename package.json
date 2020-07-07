@@ -4,10 +4,13 @@
   "description": "DeepL integration for Slack",
   "main": "lib/index.js",
   "scripts": {
-    "start": "npm run build && node lib/index.js",
+    "start": "node lib/index.js",
     "local": "npm run build:live",
     "build": "tsc -p .",
-    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts"
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \"ts-node\" src/index.ts",
+    "gcp-build": "yarn build",
+    "prestart": "yarn gcp-uild",
+    "deploy": "gcloud app deploy app.yml"
   },
   "author": "Kazuhiro Sera (@seratch)",
   "license": "MIT",

@@ -3,4 +3,5 @@ jspm_packages
 .serverless
 .webpack
 .env
+secret.yml
 lib/
